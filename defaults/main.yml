@@ -5,14 +5,14 @@ mongodb_apt_key_id: 7F0CEB10
 mongodb_disable_thp: true
 
 #This user is for the mongo lockdown on the admin db.
-mongodb_admin_user:   vagrant
-mongodb_admin_pass:   vagrant
+mongodb_admin_user:   mongoadmin
+mongodb_admin_pass:   choose_a_strong_password
 mongodb_admin_host:   localhost
 mongodb_admin_host_port: 27017
 #login_port
 #This user is for a regular db.
-mongodb_database:   vagrant
-mongodb_user:       vagrant
-mongodb_pass:       vagrant
+mongodb_database:   mydb
+mongodb_user:       mydb_user
+mongodb_pass:       choose_a_strong_password
 mongodb_user_state: present
 mongodb_user_role:  dbOwner
