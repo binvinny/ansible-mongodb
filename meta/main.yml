@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Phillip Bailey
-  description: Terraform installation and setup.
+  description: MongoDB installation and setup.
   license: MIT
   min_ansible_version: 1.2
   platforms:
