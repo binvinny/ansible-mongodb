@@ -3,30 +3,65 @@ ansible-mongodb
 
 Minimal role to deploy a single MongoDB node with one authenticate user.
 
+[MongoDB](http://www.mongodb.org/)
+
+* Install and configure  MongoDB 3.2 on Ubuntu 14.04 and Centos 6.6;
+* Provide hanlers for restart and reload;
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+N/A
+
 
 Role Variables
 --------------
-
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+```yaml
+#This user is for the mongo lockdown on the admin db.
+mongodb_admin_user:   mongoadmin
+mongodb_admin_pass:   <choose_a_strong_password>
+mongodb_admin_host:   localhost
+mongodb_admin_host_port: 27017
+#This user is for a regular db.
+mongodb_database:   mydb
+mongodb_user:       mydb_user
+mongodb_pass:       <choose_a_strong_password>
+mongodb_user_state: present
+mongodb_user_role:  dbOwner
+```
 
 Dependencies
 ------------
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+N/A
+
 
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+Add `Stouts.mongodb` to your roles and set vars in your playbook file.
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+Example:
+
+```yaml
+
+- hosts: all
+
+  roles:
+  - p0bailey.mongodb
+
+  vars:
+      mongodb_admin_user:   mongoadmin
+      mongodb_admin_pass:   <choose_a_strong_password>
+      mongodb_admin_host:   localhost
+      mongodb_admin_host_port: 27017
+      #This user is for a regular db.
+      mongodb_database:   mydb
+      mongodb_user:       mydb_user
+      mongodb_pass:       <choose_a_strong_password>
+      mongodb_user_state: present
+      mongodb_user_role:  dbOwner
+```
 
 License
 -------
