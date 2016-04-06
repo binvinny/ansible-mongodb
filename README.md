@@ -5,7 +5,7 @@ Minimal role to deploy a single MongoDB node with one authenticate user.
 
 [MongoDB](http://www.mongodb.org/)
 
-* Install and configure the MongoDB;
+* Install and configure  MongoDB 3.2 on Ubuntu 14.04 and Centos 6.6;
 * Provide hanlers for restart and reload;
 
 Requirements
